@@ -2,7 +2,7 @@ from django.db import models
 
 def upload_profile_location(self,filename):
     
-    return 'Profiles/%s/%s' % ('profile', filename)
+    return 'Profile/static/%s/%s' % ('picture', filename)
 
 class Profile(models.Model):
     picture = models.ImageField(null = True,upload_to=upload_profile_location)
