@@ -1,12 +1,12 @@
 from rest_framework.renderers import TemplateHTMLRenderer,StaticHTMLRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from ..models.profile import Profile
+from ..models.social_acc_model import Social
 
-class UserProfile(APIView):
+class Home(APIView):
     renderer_classes = [TemplateHTMLRenderer]
-    template_name = '../templates/user_profile.htm'
+    template_name = '../templates/home.htm'
 
     def get(self, request):
-        profile = Profile.objects.all().values()
-        return Response({'profile': profile})
+        social = Social.objects.all().values()
+        return Response({'social': social})
